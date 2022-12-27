@@ -6,12 +6,15 @@ import {
   useSyncExternalStore,
 } from "react";
 import { useNavigate } from "react-router-dom";
-import styles from "./CustomPageBackground.module.css";
+import styles from "./CustomPage.module.css";
 
-const CustomPageBackground: FunctionComponent = () => {
+const CustomPage: FunctionComponent = () => {
   const [backgroundColor, setBackgroundColor] = useState("");
   const [clothesSort, setClothesSort] = useState("");
   const [pantsSort, setPantsSort] = useState("");
+  const [isOpenBGC, setIsOpenBGC] = useState(true);
+  const [isOpenClothes, setIsOpenClothes] = useState(true);
+  const [isOpenPants, setIsOpenPants] = useState(true);
 
   const navigate = useNavigate();
 
@@ -125,13 +128,16 @@ const CustomPageBackground: FunctionComponent = () => {
         ></img>
       </div>
 
-      <button className={styles.navPants} autoFocus data-animate-on-scroll />
-      <button className={styles.navClothes} autoFocus data-animate-on-scroll />
       <button
         className={styles.navBackground}
         autoFocus
         data-animate-on-scroll
       />
+      {/* {isOpenBGC && <BGC setIdOpen={setIsOpenBGC} */}
+      <button className={styles.navClothes} autoFocus data-animate-on-scroll />
+      {/* {isOpenClothes && <BGC setIdOpen={setIsOpenClothes}/>} */}
+      <button className={styles.navPants} autoFocus data-animate-on-scroll />
+      {/* {isOpenPants && <BGC setIdOpen={setIsOpenPants}/>} */}
 
       <img
         src="https://iili.io/HIOr6hb.jpg"
@@ -165,4 +171,4 @@ const CustomPageBackground: FunctionComponent = () => {
   );
 };
 
-export default CustomPageBackground;
+export default CustomPage;

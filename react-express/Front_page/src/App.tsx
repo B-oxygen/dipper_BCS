@@ -7,7 +7,7 @@ import {
 import REGISTERPAGE from "./pages/REGISTERPAGE";
 import LOGINPAGE from "./pages/LOGINPAGE";
 import MYPage from "./pages/MYPage";
-import CustomPageBackground from "./pages/CustomPageBackground";
+import CustomPage from "./pages/CustomPage";
 import RouteFollowingPage from "./pages/RouteFollowingPage";
 import { useEffect } from "react";
 
@@ -72,10 +72,7 @@ function App() {
 
       <Route path="/my-page" element={<MYPage />} />
 
-      <Route
-        path="/custom-page-background"
-        element={<CustomPageBackground />}
-      />
+      <Route path="/custom-page-background" element={<CustomPage />} />
 
       <Route path="/route-following-page" element={<RouteFollowingPage />} />
     </Routes>
