@@ -185,7 +185,9 @@
   width: 354px;
 }
 
-.backgroundColor {
+.backgroundColor,
+.skin,
+.clothes {
   top: calc(50% - 194.5px);
   left: 131px;
   border-radius: 75px;
@@ -193,24 +195,16 @@
   height: 383px;
   object-fit: contain;
   position: absolute;
+  background-color: transparent;
+}
+.backgroundColor {
+  z-index: 1;
 }
 .skin {
-  top: 778px;
-  left: 131px;
-  border-radius: var(--br-xs);
-  background-color: var(--color-gray-500);
-  width: 370px;
-  height: 77px;
-  position: absolute;
+  z-index: 2;
 }
 .clothes {
-  top: 876px;
-  left: 128px;
-  border-radius: var(--br-xs);
-  background-color: var(--color-gray-500);
-  width: 376px;
-  height: 141px;
-  position: absolute;
+  z-index: 7;
 }
 
 .navBackground,

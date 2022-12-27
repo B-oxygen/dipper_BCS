@@ -1,11 +1,11 @@
 .wholeWrapper {
   position: absolute;
   height: 67.54%;
-  width: 89.63%;
+  width: 1570px;
   top: 24.44%;
-  right: 3.97%;
+  /* right: 3.97%; */
   bottom: 8.02%;
-  left: 6.39%;
+  left: 110px;
   border-radius: var(--br-xl);
   background-color: var(--color-gray-200);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25),
@@ -31,18 +31,20 @@
 .resigeter {
   position: absolute;
   top: 412px;
-  left: 1275px;
+  left: 1250px;
   width: 363px;
   height: 730.78px;
 }
+
 .firstImageIcon {
   position: absolute;
-  top: calc(50% - 177px);
-  left: calc(50% - 672px);
+  top: 412px;
+  left: 190px;
   width: 1007px;
-  height: 574px;
+  height: 730.78px;
   object-fit: cover;
 }
+
 .wrapperConnectWallet {
   cursor: pointer;
   border: 0;
