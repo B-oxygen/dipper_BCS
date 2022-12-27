@@ -6,19 +6,19 @@ const MYPage: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const onLogoExImageClick = useCallback(() => {
-    navigate("/custom-page-background");
+    navigate("/custom-page");
   }, [navigate]);
 
   const onRectangleButtonClick = useCallback(() => {
-    navigate("/route-following-page");
+    navigate("/route-page");
   }, [navigate]);
 
   const onStartGameContainerClick = useCallback(() => {
-    navigate("/route-following-page");
+    navigate("/route-page");
   }, [navigate]);
 
   const onShopButtonClick = useCallback(() => {
-    navigate("/custom-page-background");
+    navigate("/custom-page");
   }, [navigate]);
 
   return (

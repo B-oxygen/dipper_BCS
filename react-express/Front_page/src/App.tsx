@@ -8,7 +8,7 @@ import REGISTERPAGE from "./pages/REGISTERPAGE";
 import LOGINPAGE from "./pages/LOGINPAGE";
 import MYPage from "./pages/MYPage";
 import CustomPage from "./pages/CustomPage";
-import RouteFollowingPage from "./pages/RouteFollowingPage";
+import RoutePage from "./pages/RoutePage";
 import { useEffect } from "react";
 
 function App() {
@@ -40,11 +40,11 @@ function App() {
         title = "";
         metaDescription = "";
         break;
-      case "/custom-page-background":
+      case "/custom-page":
         title = "";
         metaDescription = "";
         break;
-      case "/route-following-page":
+      case "/route-page":
         title = "";
         metaDescription = "";
         break;
@@ -72,9 +72,9 @@ function App() {
 
       <Route path="/my-page" element={<MYPage />} />
 
-      <Route path="/custom-page-background" element={<CustomPage />} />
+      <Route path="/custom-page" element={<CustomPage />} />
 
-      <Route path="/route-following-page" element={<RouteFollowingPage />} />
+      <Route path="/route-page" element={<RoutePage />} />
     </Routes>
   );
 }

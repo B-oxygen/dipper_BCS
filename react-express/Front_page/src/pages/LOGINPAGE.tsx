@@ -6,15 +6,19 @@ const LOGINPAGE: FunctionComponent = () => {
   const navigate = useNavigate();
 
   const onRectangleButtonClick = useCallback(() => {
-    navigate("/route-following-page");
+    navigate("/route-page");
   }, [navigate]);
 
   const onStartGameClick = useCallback(() => {
-    navigate("/route-following-page");
+    navigate("/route-page");
   }, [navigate]);
 
   const onLOGOClick = useCallback(() => {
     navigate("/my-page");
+  }, [navigate]);
+
+  const onShopClick = useCallback(() => {
+    navigate("/custom-page");
   }, [navigate]);
 
   return (
@@ -38,15 +42,15 @@ const LOGINPAGE: FunctionComponent = () => {
       </button>
       <img
         className={styles.firstImageIcon}
-        alt=""
         src="../first-image@2x.png"
+        alt=""
       />
       <div className={styles.icon}>
-        <button className={styles.shopButton} autoFocus>
+        <button className={styles.shopButton} autoFocus onClick={onShopClick}>
           <button className={styles.shopButtonChild} autoFocus />
           <div className={styles.shop}>SHOP</div>
         </button>
-        <button className={styles.myPageButton} autoFocus>
+        <button className={styles.myPageButton} autoFocus onClick={onLOGOClick}>
           <button className={styles.shopButtonChild} autoFocus />
           <div className={styles.myPage}>MY PAGE</div>
         </button>

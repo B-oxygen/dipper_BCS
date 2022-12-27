@@ -7,14 +7,20 @@ import {
 } from "react";
 import { useNavigate } from "react-router-dom";
 import styles from "./CustomPage.module.css";
+import BackgroundColor from "./custompages/1.BackgroundColor";
+import Skin from "./custompages/2.Skin";
+import Clothes from "./custompages/7.Clothes";
 
 const CustomPage: FunctionComponent = () => {
-  const [backgroundColor, setBackgroundColor] = useState("");
+  const [backgroundColor, setBackgroundColor] = useState(
+    "https://iili.io/HIOr6hb.jpg"
+  );
+  const [skinSort, setSkinSort] = useState("");
   const [clothesSort, setClothesSort] = useState("");
-  const [pantsSort, setPantsSort] = useState("");
+
   const [isOpenBGC, setIsOpenBGC] = useState(true);
-  const [isOpenClothes, setIsOpenClothes] = useState(true);
-  const [isOpenPants, setIsOpenPants] = useState(true);
+  const [isOpenSkin, setIsOpenSkin] = useState(false);
+  const [isOpenClothes, setIsOpenClothes] = useState(false);
 
   const navigate = useNavigate();
 
@@ -23,15 +29,15 @@ const CustomPage: FunctionComponent = () => {
   }, [navigate]);
 
   const onRectangleButtonClick = useCallback(() => {
-    navigate("/route-following-page");
+    navigate("/route-page");
   }, [navigate]);
 
   const onStartGameClick = useCallback(() => {
-    navigate("/route-following-page");
+    navigate("/route-page");
   }, [navigate]);
 
   const onShopButtonClick = useCallback(() => {
-    navigate("/custom-page-background");
+    navigate("/custom-page");
   }, [navigate]);
 
   const onRectangleButton2Click = useCallback(() => {
@@ -108,65 +114,71 @@ const CustomPage: FunctionComponent = () => {
 
       <div>
         <img
-          className={styles.pants}
+          className={styles.backgroundColor}
           data-animate-on-scroll
-          src=""
-          alt="pants"
-        />
-        <img
-          className={styles.clothes}
-          data-animate-on-scroll
-          src=""
-          alt="top"
-        />
-        {/* <img className={styles.icon1} alt="" src="../-2@2x.png"></img> */}
-        <img
-          className={styles.icon1}
-          data-animate-on-scroll
-          src={pantsSort}
-          alt="icon1"
+          src={backgroundColor}
+          alt="backgroundColor"
         ></img>
+
+        <img
+          className={styles.skin}
+          data-animate-on-scroll
+          src={skinSort}
+          alt="skin"
+        />
       </div>
+
+      <img
+        className={styles.clothes}
+        data-animate-on-scroll
+        src={clothesSort}
+        alt="clothes"
+      />
 
       <button
         className={styles.navBackground}
         autoFocus
         data-animate-on-scroll
-      />
-      {/* {isOpenBGC && <BGC setIdOpen={setIsOpenBGC} */}
-      <button className={styles.navClothes} autoFocus data-animate-on-scroll />
-      {/* {isOpenClothes && <BGC setIdOpen={setIsOpenClothes}/>} */}
-      <button className={styles.navPants} autoFocus data-animate-on-scroll />
-      {/* {isOpenPants && <BGC setIdOpen={setIsOpenPants}/>} */}
+        onClick={() => {
+          setIsOpenBGC(true);
+          setIsOpenSkin(false);
+          setIsOpenClothes(false);
+        }}
+      >
+        background Color
+      </button>
+      <button
+        className={styles.navSkin}
+        autoFocus
+        data-animate-on-scroll
+        onClick={() => {
+          setIsOpenBGC(false);
+          setIsOpenSkin(true);
+          setIsOpenClothes(false);
+        }}
+      >
+        Skin
+      </button>
+      <button
+        className={styles.navClothes}
+        autoFocus
+        data-animate-on-scroll
+        onClick={() => {
+          setIsOpenBGC(false);
+          setIsOpenSkin(false);
+          setIsOpenClothes(true);
+        }}
+      >
+        Clothes
+      </button>
 
-      <img
-        src="https://iili.io/HIOr6hb.jpg"
-        alt=""
-        className={styles.background1}
-        onClick={() => setPantsSort("https://iili.io/HIOr6hb.jpg")}
-      />
-
-      <img
-        src="https://iili.io/HIOrgpe.jpg"
-        alt=""
-        className={styles.background2}
-        onClick={() => setPantsSort("https://iili.io/HIOrgpe.jpg")}
-      />
-
-      <img
-        src="https://iili.io/HIOrPQj.jpg"
-        alt=""
-        className={styles.background3}
-        onClick={() => setPantsSort("https://iili.io/HIOrPQj.jpg")}
-      />
-
-      <img
-        src="https://iili.io/HIOr4Tu.jpg"
-        alt=""
-        className={styles.background4}
-        onClick={() => setPantsSort("https://iili.io/HIOr4Tu.jpg")}
-      />
-      <div className={styles.container} />
+      <div className={styles.container}>
+        {isOpenBGC && (
+          <BackgroundColor setBackgroundColor={setBackgroundColor} />
+        )}
+        {isOpenSkin && <Skin setSkinSort={setSkinSort} />}
+        {isOpenClothes && <Clothes setClothesSort={setClothesSort} />}
+      </div>
     </div>
   );
 };

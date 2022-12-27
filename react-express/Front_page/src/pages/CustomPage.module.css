@@ -41,6 +41,17 @@
   filter: blur(4px);
   -webkit-text-stroke: 1px #fff;
 }
+
+.backgroundColor.animate,
+.clothes.animate,
+.pants.animate,
+.instanceChild.animate,
+.navBackground.animate,
+.navClothes.animate,
+.navSkin.animate {
+  animation: 1s ease 0s 1 normal forwards fade-in;
+}
+
 .button,
 .startGameChild {
   cursor: pointer;
@@ -89,15 +100,36 @@
   width: 1517.86px;
   height: 122.13px;
 }
-.shopButtonChild {
-  background-color: var(--color-gray-200);
+
+.myPage {
+  position: absolute;
+  height: 52.7%;
+  width: 78.71%;
+  top: 24.5%;
+  left: 10.87%;
+  font-size: var(--font-size-base);
+  font-family: var(--font-inter);
+  color: var(--color-violet);
+  text-align: left;
+  display: inline-block;
+  -webkit-text-stroke: 1px #000;
+}
+.instanceChild {
+  cursor: pointer;
+  border: 0;
+  padding: 0;
+  position: absolute;
   top: 0;
-  left: calc(50% - 70px);
+  background-color: var(--color-gray-200);
+  height: 100%;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
   border-radius: var(--br-xl);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25),
     0 4px 33px 19px rgba(144, 85, 162, 0.5);
-  width: 140px;
-  height: 73px;
+  opacity: 0;
 }
 .shop {
   position: absolute;
@@ -112,48 +144,26 @@
   height: 38.73px;
   -webkit-text-stroke: 1px #000;
 }
-.instanceChild,
 .shopButton {
+  background-color: transparent;
+  left: calc(50% + 37px);
+  width: 140px;
+  height: 73px;
   cursor: pointer;
   border: 0;
   padding: 0;
   position: absolute;
   top: 0;
 }
-.shopButton {
-  background-color: transparent;
-  left: calc(50% + 37px);
-  width: 140px;
-  height: 73px;
-}
-.instanceChild {
+.shopButtonChild {
   background-color: var(--color-gray-200);
-  height: 100%;
-  width: 100%;
-  right: 0;
-  bottom: 0;
-  left: 0;
+  top: 0;
+  left: calc(50% - 70px);
   border-radius: var(--br-xl);
   box-shadow: 0 4px 4px rgba(0, 0, 0, 0.25),
     0 4px 33px 19px rgba(144, 85, 162, 0.5);
-  opacity: 0;
-}
-.clothes.animate,
-.instanceChild.animate {
-  animation: 1s ease 0s 1 normal forwards fade-in;
-}
-.myPage {
-  position: absolute;
-  height: 52.7%;
-  width: 78.71%;
-  top: 24.5%;
-  left: 10.87%;
-  font-size: var(--font-size-base);
-  font-family: var(--font-inter);
-  color: var(--color-violet);
-  text-align: left;
-  display: inline-block;
-  -webkit-text-stroke: 1px #000;
+  width: 140px;
+  height: 73px;
 }
 .icon,
 .rectangleParent {
@@ -171,80 +181,62 @@
 }
 .icon {
   top: 47px;
-  left: calc(50% + 423.5px);
+  left: 1260px;
   width: 354px;
 }
-.pants {
-  top: 876px;
-  left: 128px;
-  border-radius: var(--br-xs);
-  background-color: var(--color-gray-500);
-  width: 376px;
-  height: 141px;
-}
-.clothes,
-.icon1,
-.pants {
+
+.backgroundColor {
+  top: calc(50% - 194.5px);
+  left: 131px;
+  border-radius: 75px;
+  width: 372px;
+  height: 383px;
+  object-fit: contain;
   position: absolute;
 }
-.clothes {
+.skin {
   top: 778px;
   left: 131px;
   border-radius: var(--br-xs);
   background-color: var(--color-gray-500);
   width: 370px;
   height: 77px;
-  opacity: 0;
+  position: absolute;
 }
-.icon1 {
-  top: calc(50% - 194.5px);
-  right: 1154px;
-  border-radius: 75px;
-  width: 372px;
-  height: 383px;
-  object-fit: cover;
-}
-.navClothes,
-.navPants {
-  cursor: pointer;
-  border: 0;
+.clothes {
+  top: 876px;
+  left: 128px;
+  border-radius: var(--br-xs);
   background-color: var(--color-gray-500);
-  top: 388px;
+  width: 376px;
+  height: 141px;
+  position: absolute;
+}
+
+.navBackground,
+.navClothes,
+.navSkin {
+  position: absolute;
+  border-radius: var(--br-xs);
+  background-color: var(--color-gray-500);
+  border: 0;
+  padding: 0;
+  opacity: 0;
   width: 149px;
   height: 77px;
-  opacity: 0;
-}
-.navPants {
-  padding: 0;
-  position: absolute;
-  left: 848px;
-  border-radius: var(--br-xs);
-}
-.navBackground.animate,
-.navClothes.animate,
-.navPants.animate {
-  animation: 2s ease 0s 1 normal forwards fade-in;
-}
-.navClothes {
-  left: 699px;
-}
-.background4,
-.navBackground,
-.navClothes {
-  padding: 0;
-  position: absolute;
-  border-radius: var(--br-xs);
+  top: 388px;
+  cursor: pointer;
 }
 .navBackground {
-  cursor: pointer;
-  border: 0;
-  background-color: var(--color-gray-500);
-  top: 388px;
   left: 550px;
-  width: 149px;
-  height: 77px;
-  opacity: 0;
 }
+.navSkin {
+  left: 699px;
+}
+.navClothes {
+  left: 848px;
+}
+
 .background1,
 .background2,
 .background3,
@@ -253,7 +245,7 @@
   border: 0;
   padding: 0;
   background-color: transparent;
-  top: 497px;
+  top: 30px;
   background: linear-gradient(#fff, #fff), rgba(217, 217, 217, 0.24);
   width: 199px;
   height: 182px;
@@ -263,19 +255,19 @@
   z-index: 1;
 }
 .background1 {
-  left: 574px;
+  left: 20px;
 }
 .background2 {
-  left: 809px;
+  left: 229px;
 }
 .background3 {
-  left: 1044px;
+  left: 438px;
 }
 .background4 {
-  left: 1289px;
+  left: 647px;
 }
 .container {
-  position: absolute;
+  position: relative;
   border-radius: var(--br-xs);
   top: 465px;
   left: 550px;
