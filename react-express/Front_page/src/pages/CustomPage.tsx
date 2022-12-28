@@ -9,17 +9,26 @@ import { useNavigate } from "react-router-dom";
 import styles from "./CustomPage.module.css";
 import BackgroundColor from "./custompages/1.BackgroundColor";
 import Skin from "./custompages/2.Skin";
-import Clothes from "./custompages/7.Clothes";
+import Hair from "./custompages/3.Hair";
+import Eyes from "./custompages/4.Eyes";
+import Eyebrow from "./custompages/5.Eyebrow";
+import Clothes from "./custompages/6.Clothes";
 
 const CustomPage: FunctionComponent = () => {
   const [backgroundColor, setBackgroundColor] = useState(
-    "https://iili.io/HIOr6hb.jpg"
+    "https://iili.io/HT54pUv.png"
   );
-  const [skinSort, setSkinSort] = useState("");
-  const [clothesSort, setClothesSort] = useState("");
+  const [skinSort, setSkinSort] = useState("https://iili.io/HT56dbI.png");
+  const [hairSort, setHairSort] = useState("https://iili.io/HT56Ksn.png");
+  const [eyesSort, setEyesSort] = useState("https://iili.io/HT56oJ4.png");
+  const [eyebrowSort, setEyebrowSort] = useState("https://iili.io/HT56AX9.png");
+  const [clothesSort, setClothesSort] = useState("https://iili.io/HT56agj.png");
 
   const [isOpenBGC, setIsOpenBGC] = useState(true);
   const [isOpenSkin, setIsOpenSkin] = useState(false);
+  const [isOpenHair, setIsOpenHair] = useState(false);
+  const [isOpenEyes, setIsOpenEyes] = useState(false);
+  const [isOpenEyebrow, setIsOpenEyebrow] = useState(false);
   const [isOpenClothes, setIsOpenClothes] = useState(false);
 
   const navigate = useNavigate();
@@ -118,22 +127,44 @@ const CustomPage: FunctionComponent = () => {
           data-animate-on-scroll
           src={backgroundColor}
           alt="backgroundColor"
-        ></img>
-
+        />
         <img
           className={styles.skin}
           data-animate-on-scroll
           src={skinSort}
           alt="skin"
         />
+        <img
+          className={styles.outline}
+          data-animate-on-scroll
+          src="https://iili.io/HT569JR.png"
+          alt="skin"
+        />
+        <img
+          className={styles.skin}
+          data-animate-on-scroll
+          src={hairSort}
+          alt="hair"
+        />
+        <img
+          className={styles.skin}
+          data-animate-on-scroll
+          src={eyesSort}
+          alt="eyes"
+        />{" "}
+        <img
+          className={styles.skin}
+          data-animate-on-scroll
+          src={eyebrowSort}
+          alt="eyebrow"
+        />
+        <img
+          className={styles.clothes}
+          data-animate-on-scroll
+          src={clothesSort}
+          alt="clothes"
+        />
       </div>
-
-      <img
-        className={styles.clothes}
-        data-animate-on-scroll
-        src={clothesSort}
-        alt="clothes"
-      />
 
       <button
         className={styles.navBackground}
@@ -142,6 +173,9 @@ const CustomPage: FunctionComponent = () => {
         onClick={() => {
           setIsOpenBGC(true);
           setIsOpenSkin(false);
+          setIsOpenHair(false);
+          setIsOpenEyes(false);
+          setIsOpenEyebrow(false);
           setIsOpenClothes(false);
         }}
       >
@@ -154,10 +188,58 @@ const CustomPage: FunctionComponent = () => {
         onClick={() => {
           setIsOpenBGC(false);
           setIsOpenSkin(true);
+          setIsOpenHair(false);
+          setIsOpenEyes(false);
+          setIsOpenEyebrow(false);
           setIsOpenClothes(false);
         }}
       >
         Skin
+      </button>
+      <button
+        className={styles.navHair}
+        autoFocus
+        data-animate-on-scroll
+        onClick={() => {
+          setIsOpenBGC(false);
+          setIsOpenSkin(false);
+          setIsOpenHair(true);
+          setIsOpenEyes(false);
+          setIsOpenEyebrow(false);
+          setIsOpenClothes(false);
+        }}
+      >
+        Hair
+      </button>
+      <button
+        className={styles.navEyes}
+        autoFocus
+        data-animate-on-scroll
+        onClick={() => {
+          setIsOpenBGC(false);
+          setIsOpenSkin(false);
+          setIsOpenHair(false);
+          setIsOpenEyes(true);
+          setIsOpenEyebrow(false);
+          setIsOpenClothes(false);
+        }}
+      >
+        Eyes
+      </button>
+      <button
+        className={styles.navEyebrow}
+        autoFocus
+        data-animate-on-scroll
+        onClick={() => {
+          setIsOpenBGC(false);
+          setIsOpenSkin(false);
+          setIsOpenHair(false);
+          setIsOpenEyes(false);
+          setIsOpenEyebrow(true);
+          setIsOpenClothes(false);
+        }}
+      >
+        Eyebrow
       </button>
       <button
         className={styles.navClothes}
@@ -166,6 +248,9 @@ const CustomPage: FunctionComponent = () => {
         onClick={() => {
           setIsOpenBGC(false);
           setIsOpenSkin(false);
+          setIsOpenHair(false);
+          setIsOpenEyes(false);
+          setIsOpenEyebrow(false);
           setIsOpenClothes(true);
         }}
       >
@@ -177,6 +262,9 @@ const CustomPage: FunctionComponent = () => {
           <BackgroundColor setBackgroundColor={setBackgroundColor} />
         )}
         {isOpenSkin && <Skin setSkinSort={setSkinSort} />}
+        {isOpenHair && <Hair setHairSort={setHairSort} />}
+        {isOpenEyes && <Eyes setEyesSort={setEyesSort} />}
+        {isOpenEyebrow && <Eyebrow setEyebrowSort={setEyebrowSort} />}
         {isOpenClothes && <Clothes setClothesSort={setClothesSort} />}
       </div>
     </div>

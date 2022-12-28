@@ -4,31 +4,24 @@ const Skin = ({ setSkinSort }) => {
   return (
     <div>
       <img
-        src="https://iili.io/HIOr6hb.jpg"
+        src="https://iili.io/HT56dbI.png"
         alt=""
         className={styles.background1}
-        onClick={() => setSkinSort("https://iili.io/HIOr6hb.jpg")}
+        onClick={() => setSkinSort("https://iili.io/HT56dbI.png")}
       />
 
       <img
-        src="https://iili.io/HIOrgpe.jpg"
+        src="https://iili.io/HT563xt.png"
         alt=""
         className={styles.background2}
-        onClick={() => setSkinSort("https://iili.io/HIOrgpe.jpg")}
+        onClick={() => setSkinSort("https://iili.io/HT563xt.png")}
       />
 
       <img
-        src="https://iili.io/HIOrPQj.jpg"
+        src="https://iili.io/HT56FWX.png"
         alt=""
         className={styles.background3}
-        onClick={() => setSkinSort("https://iili.io/HIOrPQj.jpg")}
-      />
-
-      <img
-        src="https://iili.io/HIOr4Tu.jpg"
-        alt=""
-        className={styles.background4}
-        onClick={() => setSkinSort("https://iili.io/HIOr4Tu.jpg")}
+        onClick={() => setSkinSort("https://iili.io/HT56FWX.png")}
       />
     </div>
   );

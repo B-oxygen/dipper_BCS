@@ -185,8 +185,12 @@
   width: 354px;
 }
 
+.outline,
 .backgroundColor,
 .skin,
+.hair,
+.eyes,
+.eyebrow,
 .clothes {
   top: calc(50% - 194.5px);
   left: 131px;
@@ -203,20 +207,35 @@
 .skin {
   z-index: 2;
 }
+.outline {
+  z-index: 2;
+}
+.hair {
+  z-index: 3;
+}
+.eyes {
+  z-index: 4;
+}
+.eyebrow {
+  z-index: 5;
+}
 .clothes {
-  z-index: 7;
+  z-index: 6;
 }
 
 .navBackground,
-.navClothes,
-.navSkin {
+.navSkin,
+.navHair,
+.navEyes,
+.navEyebrow,
+.navClothes {
   position: absolute;
   border-radius: var(--br-xs);
   background-color: var(--color-gray-500);
   border: 0;
   padding: 0;
-  opacity: 0;
-  width: 149px;
+
+  width: 150px;
   height: 77px;
   top: 388px;
   cursor: pointer;
@@ -225,10 +244,19 @@
   left: 550px;
 }
 .navSkin {
-  left: 699px;
+  left: 700px;
+}
+.navHair {
+  left: 850px;
+}
+.navEyes {
+  left: 1000px;
+}
+.navEyebrow {
+  left: 1150px;
 }
 .navClothes {
-  left: 848px;
+  left: 1300px;
 }
 
 .background1,
