@@ -1,0 +1,40 @@
+{
+  "_format": "hh-sol-cache-2",
+  "files": {
+    "/Users/b_oxygen/Desktop/dipper_BCS/contracts/root_verify.sol": {
+      "lastModificationDate": 1672586055747,
+      "contentHash": "5609c7383e6ba94c3bf1c865e8b3174e",
+      "sourceName": "contracts/root_verify.sol",
+      "solcConfig": {
+        "version": "0.8.17",
+        "settings": {
+          "optimizer": {
+            "enabled": false,
+            "runs": 200
+          },
+          "outputSelection": {
+            "*": {
+              "*": [
+                "abi",
+                "evm.bytecode",
+                "evm.deployedBytecode",
+                "evm.methodIdentifiers",
+                "metadata"
+              ],
+              "": [
+                "ast"
+              ]
+            }
+          }
+        }
+      },
+      "imports": [],
+      "versionPragmas": [
+        "^0.8.0"
+      ],
+      "artifacts": [
+        "rootVerify"
+      ]
+    }
+  }
+}
